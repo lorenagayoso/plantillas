@@ -12,9 +12,21 @@
     "id": 2
   },
   {
-    "title": "chaqueta",
-    "price": 10,
-    "thumbnail": "https://cdn.pixabay.com/photo/2017/10/06/04/32/jacket-2821961_960_720.jpg",
+    "title": "botas",
+    "price": 123,
+    "thumbnail": "https://cdn.pixabay.com/photo/2017/01/13/04/56/blank-1976334_960_720.png",
     "id": 3
+  },
+  {
+    "title": "medias",
+    "price": 35.23,
+    "thumbnail": "https://cdn.pixabay.com/photo/2017/01/13/04/56/blank-1976334_960_720.png",
+    "id": 4
+  },
+  {
+    "title": "botas",
+    "price": 35.23,
+    "thumbnail": "https://cdn.pixabay.com/photo/2017/01/13/04/56/blank-1976334_960_720.png",
+    "id": 5
   }
 ]

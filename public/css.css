@@ -1,0 +1,213 @@
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-right: -30%!important;
+    transform: translate(-17%)!important;
+  background-color : #ffda41;}
+
+
+.download-program-form {
+    width: 90vw;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 0 20px;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.contact-form, .download-program-form {
+    display: flex;
+    width: 30%;
+    margin: auto;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    box-sizing: border-box;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+input.btn-send{
+  color:white;
+}
+
+.contact-form .input-group .form-input, .download-program-form .input-group .form-input {
+    height: 60px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 0 20px;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
+}
+button, html, input, select, textarea {
+    color: #222;
+}
+button, input {
+    line-height: normal;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+user agent stylesheet
+input[type="email" i] {
+    padding: 1px 2px;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body, html {
+    font-family: Helvetica,sans-serif;
+}
+body, html {
+    font-size: 16px!important;
+}
+body {
+    line-height: 1;
+}
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+#city_name, #state_name, #barrio_name{
+margin-top: 25px;
+}
+
+
+.btn-inverse:hover, .btn-outline, .btn-outline:hover, .btn-send, .btn-white, .btn-yellow, .btn-yellow-link {
+    background: #ffcd00;
+    border-radius: 99px;
+    padding: 19px 30px 17px;
+    font-family: Eina,sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    color: #37474f;
+    letter-spacing: .07rem;
+    text-align: center;
+    border: none;
+    display: inline-block;
+}
+.w100 {
+    width: 100%;
+}
+
+.w50 {
+    width: 25%;
+}
+
+button.submit{
+    margin: auto;
+    margin-top: 25px;
+    background-color: lightblue;
+    justify-content: center;
+}
+
+button, html, input, select, textarea {
+    color: #222;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    *overflow: visible;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    line-height: normal;
+}
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+    *vertical-align: middle;
+}
+user agent stylesheet
+button {
+    appearance: auto;
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body, html {
+    font-family: Helvetica,sans-serif;
+}
+body, html {
+    font-size: 16px!important;
+}
+body {
+    line-height: 1;
+}
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
