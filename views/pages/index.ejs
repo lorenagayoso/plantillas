@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+  <%- include('../partials/head'); %>
+
+    </head>
+    
+    <body class='container'>
+
+  <header>
+
+  <%- include('../partials/header'); %>
+
+  </header>
+
+    <main>
+
+      <div id="body">
+
+      <form action="/" method="POST" class="download-program-form responsive" id="myForm">
+
+      <div class="input-group">    
+        <input id="ip_name" type="search" type="text" name="title" value="" class="form-first-marketing-ar-btn btn-send w100 title" placeholder="Titulo del producto"/>
+      </div>
+      
+      <div>    
+        <input id="state_name" type="number" min=10 name="price" value="" class="form-first-marketing-ar-btn btn-send w100 price" placeholder="precio del producto"/>
+      </div>
+      
+      <div>    
+        <input id="city_name" type="search" type="url" name="thumbnail" value="" class="form-first-marketing-ar-btn btn-send w100 url" placeholder="url de la imagen"/>
+      </div>
+
+  <button class="btn-send w50 submit"> ENVIAR </button>
+
+</form> 
+
+</div>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+
+</body>
+</html>

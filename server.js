@@ -1,37 +1,98 @@
-//EJEMPLO CON MODULO NATIVO HTTP
-/*
-const http = require('http')
-
-//Creo el servidor con el modulo createServer
-const server = http.createServer((req,res) => {
-//Cada vez que se reciba una petición por el puerto 8080, veré este mensaje en el navegador (servidor a cliente)
-	res.end("Hola mundo")
-})
-
-// .listen es un método que le dice al servidor por qué puerto se va a ubicar.
-const connectedServer = server.listen(8080,() => {
-//cuando se inicie el servidor, en la consola(servidor) veré el siguiente mensaje (opcional)
-	console.log(`http server listening at port ${connectedServer.address().port}`)
-})
-*/
-//EJEMPLO CON MODULO EXTERNO EXPRESS (MAS FACIL)
-
-const fs = require('fs');
-
+// load the things we need
 const express = require('express');
-
 const app = express();
+const fs = require('fs')
 
-const port = 8080
+const port = 3000
 
-const server = app.listen(port,()=> {
-	console.log(`http server listening at port ${server.address().port}`)
+app.use(express.static(__dirname + '/public'));
+
+
+const router = express.Router()
+router.use(express.urlencoded({extended: true}))
+router.use(express.json())
+const server = app.listen(port,()=>{
+  console.log(`server up and running at port ${server.address().port}`)
 })
 
-//Devuelve un array con todos los productos disponibles en el servidor
-app.get('/productos',(req,res) => {
+server.on('error',(error)=> console.log(`hubo error en  ${error}` ) )
 
-        try{
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// use res.render to load up an ejs view file
+
+
+//app.get for index page (home)
+
+router.get('/', function(req, res) {
+    res.render('pages/index');
+});
+
+
+router.post('/', (req,res) => {
+
+
+let setId
+try{
+      
+      //transformo mi objeto para que sea compatible con los objetos de mi archivo Productos.txt
+      
+      // De objeto paso el req body a array para poder aplicar método reduce
+
+         let result = req.body; 
+      
+          function postProducts(){
+            //En este punto es un string
+            const contenido = fs.readFileSync('./products.txt', 'utf-8') 
+            //Aqui ya es un objeto
+            let json = []
+              if(contenido.length > 0) {json = JSON.parse(contenido.split(","))}
+              const body = result
+              console.log(json.length)
+              setId = json.length + 1 
+              body.id = setId
+              json.push(body)
+              return json
+          }
+        }
+    
+      catch(err) {
+        console.log(err)
+      }   
+
+
+// De Objeto, lo vuelvo a pasar a string con stringify
+
+const info = JSON.stringify(postProducts(),null,2)
+
+// finalmente, sobre escribo el contenido del archivo txt con el nuevo array hecho string
+
+    fs.writeFile('./products.txt' , info , (error, data) => {
+
+//Si hay algun error al guardar el archivo, mostrar en consola tal error
+      if(error){
+        console.log(error)
+      } 
+//Si no hay ningun error, mostrar mensaje de exito en la consola
+      else {
+        console.log('Productos agregados')
+      }
+    })
+
+res.render('pages/index');
+
+//res.json({mensaje: `producto agregado con exito`})
+
+})
+
+
+
+
+
+router.get('/about', (req,res) => {
+
+try{
           function getProducts(){
           const contenido = fs.readFileSync('./products.txt', 'utf-8') 
           const json = JSON.parse(contenido.split(","))
@@ -41,31 +102,16 @@ app.get('/productos',(req,res) => {
     
       catch(err) {
         console.log("contenido no leido",err)
-      }
-    
-	res.send({products:getProducts()})
+      }   
+
+//res.json(getProducts())
+
+const products = getProducts()
+
+res.render('pages/about', {
+        products: products
+    });
+
 })
 
-//Devuelve un producto elegido al azar entre todos los productos disponibles
-
-app.get('/productoRandom',(req,res) => {
-
-        try{
-          function getRandom(){
-          const contenido = fs.readFileSync('./products.txt', 'utf-8') 
-          const json = JSON.parse(contenido.split(","))
-          const min = json[0].id
-          const max = json.slice(1).slice(-1)[0].id
-          const random = Math.floor(Math.random() * (max - min + 1)) + min
-		  return json.find(product => product.id == random)
-          }
-        }
-    
-      catch(err) {
-        console.log("contenido no leido",err)
-      }
-    
-	res.send({products:getRandom()})
-})
-
-
+app.use('/', router)

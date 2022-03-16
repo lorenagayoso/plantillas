@@ -1,12 +1,78 @@
-body{
+#body{
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    margin-right: -30%!important;
-    transform: translate(-17%)!important;
-  background-color : #ffda41;}
+    background-color : #ffda41;}
 
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card-item {
+  padding: 2px 16px;
+  text-align: center;
+  background-color: black;
+}
+
+.card-container{
+    width: 50%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
+    align-items: baseline;
+}
+
+
+body{
+    display: block;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color : #ffda41;}
+
+nav{
+  position: fixed;
+  width: 100%;
+  background-color: blue;    
+}
+
+ul {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
 
 .download-program-form {
     width: 90vw;
@@ -50,9 +116,6 @@ input {
     border-image: initial;
 }
 
-input.btn-send{
-  color:white;
-}
 
 .contact-form .input-group .form-input, .download-program-form .input-group .form-input {
     height: 60px;
@@ -79,7 +142,7 @@ input[type="email" i] {
     padding: 1px 2px;
 }
 
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -130,7 +193,11 @@ margin-top: 25px;
 }
 
 .w50 {
-    width: 25%;
+    width: 50%;
+}
+
+.btn-send:hover{
+color: white;
 }
 
 button.submit{
@@ -138,6 +205,10 @@ button.submit{
     margin-top: 25px;
     background-color: lightblue;
     justify-content: center;
+}
+
+button.submit:hover{
+    background-color: black;
 }
 
 button, html, input, select, textarea {
@@ -185,7 +256,7 @@ button {
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
 }
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
     margin: 0;
     padding: 0;
     border: 0;
