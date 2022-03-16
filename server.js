@@ -49,7 +49,6 @@ try{
             let json = []
               if(contenido.length > 0) {json = JSON.parse(contenido.split(","))}
               const body = result
-              console.log(json.length)
               setId = json.length + 1 
               body.id = setId
               json.push(body)
